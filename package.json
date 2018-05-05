@@ -1,0 +1,44 @@
+{
+  "name": "Lanystr",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "lint": "eslint src",
+    "lint:staging": "eslint `git diff --cached --diff-filter=ACMX --name-only -- '*.js'` skip-help-if-no-files-found"
+  },
+  "pre-commit": "lint",
+  "dependencies": {
+    "prop-types": "^15.6.1",
+    "react": "16.3.1",
+    "react-native": "0.55.3",
+    "react-navigation-redux-helpers": "1.0.3",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "3.0.6",
+    "redux-promise-middleware": "^5.0.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "22.4.3",
+    "babel-plugin-inline-import": "2.0.6",
+    "babel-plugin-transform-react-display-name": "6.25.0",
+    "babel-plugin-transform-remove-console": "6.9.0",
+    "babel-preset-react-native": "4.0.0",
+    "eslint": "4.17.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-recommended": "^2.0.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.6.1",
+    "jest": "22.4.3",
+    "pre-commit": "^1.2.2",
+    "react-test-renderer": "16.3.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

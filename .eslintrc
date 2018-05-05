@@ -1,0 +1,73 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "plugins": [
+        "react"
+    ],
+    "extends": "airbnb",
+    "rules": {
+        "no-plusplus": 0,
+        "no-continue": 0,
+        "no-void": 0,
+        "no-empty": 0,
+        "no-restricted-properties": 0,
+        "no-use-before-define": [
+            "error",
+            {
+                "functions": false
+            }
+        ],
+        "object-curly-spacing": [2, "never"],
+        "comma-dangle": [2, "always-multiline"],
+        "indent": [2, 4],
+        "arrow-parens": 0,
+        "no-return-assign": 0,
+        "function-paren-newline": 0,
+        "class-methods-use-this": 0,
+        "no-multiple-empty-lines": [2, {"max": 1}],
+        "no-underscore-dangle": 0,
+        "no-restricted-syntax": 0,
+        "import/prefer-default-export": 0,
+        "prefer-destructuring": 0,
+        "react/jsx-indent": [2, 4],
+        "react/jsx-indent-props": [2, 4],
+        "no-unneeded-ternary": [2, {"defaultAssignment": true}],
+        "react/display-name": 0,
+        "react/forbid-prop-types": [2, {"forbid": ["object"]}],
+        "react/destructuring-assignment": 0,
+        "react/jsx-filename-extension": 0,
+        "react/no-multi-comp": 0,
+        "jsx-a11y/anchor-is-valid": ["never"],
+        "react/jsx-tag-spacing": [2, {
+            "closingSlash": "never",
+            "beforeSelfClosing": "never",
+            "afterOpening": "never"
+        }],
+        "react/forbid-component-props": 0,
+        "react/jsx-no-bind": 0,
+        "react/require-optimization": 0,
+        "react/jsx-handler-names": 0,
+        "react/no-set-state": 0,
+        "react/jsx-one-expression-per-line": 0,
+        "react/jsx-no-literals": 0,
+        "react/prefer-stateless-function": 0,
+        "react/sort-comp": [
+            2,
+            {
+                "order": [
+                    "propTypes",
+                    "static-methods",
+                    "lifecycle",
+                    "render",
+                    "/^_render.+$/",
+                    "/^_?on.+$/",
+                    "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+                    "everything-else"
+                ]
+            }
+        ]
+    }
+}

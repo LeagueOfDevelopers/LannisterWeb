@@ -1,0 +1,16 @@
+{
+  "env": {
+      "production": {
+          "plugins": [
+              "transform-react-display-name",
+              "transform-remove-console"
+          ]
+      }
+  },
+  "presets": ["react-native"],
+  "plugins": [
+      ["babel-plugin-inline-import", {
+          "extensions": [".svg"]
+      }]
+  ]
+}
