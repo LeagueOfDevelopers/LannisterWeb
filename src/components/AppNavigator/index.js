@@ -1,19 +1,41 @@
-import React, {PureComponent} from 'react';
-import {
-    View,
-    Text,
-} from 'react-native';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {createStackNavigator} from 'react-navigation';
 
-class AppNavigator extends PureComponent {
-    render() {
-        return (
-            <View>
-                <Text>
-                    Lalko
-                </Text>
-            </View>
-        );
-    }
+import LoginScreen from '../LoginScreen';
+import MainScreen from '../MainScreen';
+import ProfileScreen from '../ProfileScreen';
+import {addListener} from '../../lib/redux';
+
+export const AppNavigator = createStackNavigator({
+    Login: {screen: LoginScreen},
+    Main: {screen: MainScreen},
+    Profile: {screen: ProfileScreen},
+});
+
+class AppWithNavigationState extends React.Component {
+  static propTypes = {
+      dispatch: PropTypes.func.isRequired,
+      nav: PropTypes.object.isRequired, // eslint-disable-line
+  };
+
+  render() {
+      const {dispatch, nav} = this.props;
+      return (
+          <AppNavigator
+              navigation={{
+                  dispatch,
+                  state: nav,
+                  addListener,
+              }}
+          />
+      );
+  }
 }
 
-export default AppNavigator;
+const mapStateToProps = state => ({
+    nav: state.nav,
+});
+
+export default connect(mapStateToProps)(AppWithNavigationState);

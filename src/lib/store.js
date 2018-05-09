@@ -3,7 +3,11 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
+import AppReducer from '../reducers';
+import {middleware} from './redux';
+
 const middlewares = [
+    middleware,
     promise(),
     thunk,
 ];
@@ -14,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const createAppStore = () => createStore(
-    () => ({}),
+    AppReducer,
     composeWithDevTools(applyMiddleware(...middlewares))
 );
 

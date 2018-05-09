@@ -3,7 +3,9 @@ import React, {PureComponent} from 'react';
 import {Provider} from 'react-redux';
 
 import {createStore} from '../lib/store';
-import HomeScreen from './HomeScreen';
+// import HomeScreen from './HomeScreen';
+
+import AppWithNavigationState from '../components/AppNavigator';
 
 const store = createStore();
 
@@ -11,7 +13,7 @@ class App extends PureComponent {
     render() {
         return (
             <Provider store={store}>
-                <HomeScreen/>
+                <AppWithNavigationState/>
             </Provider>
         );
     }
