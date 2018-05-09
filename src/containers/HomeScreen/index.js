@@ -1,12 +1,10 @@
 // @flow
 
 import React, {PureComponent} from 'react';
-import {connect} from 'react-redux';
 import {View} from 'react-native';
 
-import Home from '../../components/home';
+import Home from '../../components/Home';
 import styles from './styles';
-
 
 const titles = ['jambul', 'ermagambet'];
 
@@ -22,5 +20,5 @@ class HomeScreen extends PureComponent {
     }
 }
 
-export default connect()(HomeScreen);
+export default HomeScreen;
 
