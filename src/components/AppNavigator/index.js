@@ -1,18 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {createStackNavigator} from 'react-navigation';
+import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 
-import LoginScreen from '../LoginScreen';
-import MainScreen from '../MainScreen';
-import ProfileScreen from '../ProfileScreen';
+import screensMap from '../../lib/screens';
 import {addListener} from '../../lib/redux';
+import {MAIN, LOGIN, PROFILE} from '../../constants/screens';
 
-export const AppNavigator = createStackNavigator({
-    Login: {screen: LoginScreen},
-    Main: {screen: MainScreen},
-    Profile: {screen: ProfileScreen},
+const tabBarScreens = [MAIN, LOGIN, PROFILE];
+
+const getRouteConfigForTabBarStacks = (tabScreen) => {
+    const routeConfigs = {};
+    screensMap.forEach((screen, {key}) => routeConfigs[key] = {screen});
+    tabBarScreens.forEach((screen) => {
+        if (tabScreen !== screen) { delete routeConfigs[screen.key]; }
+    });
+    return routeConfigs;
+};
+
+const routeConfigForTabBar = {};
+tabBarScreens.forEach((screen) => {
+    routeConfigForTabBar[screen.key] = createStackNavigator(getRouteConfigForTabBarStacks(screen));
 });
+
+export const AppNavigator = createBottomTabNavigator(routeConfigForTabBar);
 
 class AppWithNavigationState extends React.Component {
   static propTypes = {

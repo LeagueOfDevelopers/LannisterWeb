@@ -4,10 +4,10 @@ import promise from 'redux-promise-middleware';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
 import AppReducer from '../reducers';
-import {middleware} from './redux';
+import {middleware as navigationMiddleware} from './redux';
 
 const middlewares = [
-    middleware,
+    navigationMiddleware,
     promise(),
     thunk,
 ];
