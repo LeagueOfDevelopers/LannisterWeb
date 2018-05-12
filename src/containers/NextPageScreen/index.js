@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, View} from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
@@ -16,14 +16,8 @@ const styles = StyleSheet.create({
     },
 });
 
-const LoginScreen = ({navigation}) => (
+const NextPageScreen = ({navigation}) => (
     <View style={styles.container}>
-        <Text style={styles.welcome}>
-      Screen A
-        </Text>
-        <Text style={styles.instructions}>
-      This is great
-        </Text>
         <Button
             onPress={() => navigation.dispatch({type: 'Login'})}
             title="Log out"
@@ -31,12 +25,12 @@ const LoginScreen = ({navigation}) => (
     </View>
 );
 
-LoginScreen.propTypes = {
+NextPageScreen.propTypes = {
     navigation: PropTypes.object.isRequired, // eslint-disable-line
 };
 
-LoginScreen.navigationOptions = {
+NextPageScreen.navigationOptions = {
     title: 'Log Out',
 };
 
-export default LoginScreen;
+export default NextPageScreen;

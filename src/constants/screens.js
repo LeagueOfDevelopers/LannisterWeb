@@ -1,19 +1,25 @@
 export const HOME = {
     key: 'Home',
-    title: 'ТипоГлавная',
+    title: 'Главная',
 };
 
 export const LOGIN = {
     key: 'Login',
-    title: 'Лалологин',
+    title: 'Вход/Регистрация',
 };
 
-export const MAIN = {
-    key: 'Main',
-    title: 'Не спрашивай',
+export const TRACKING = {
+    key: 'Tracking',
+    title: 'Отслеживания',
 };
 
 export const PROFILE = {
     key: 'Profile',
-    title: 'Провиль',
+    title: 'Профиль',
 };
+
+export const NEXTPAGE = {
+    key: 'Next',
+    title: 'Следующая страница',
+};
+

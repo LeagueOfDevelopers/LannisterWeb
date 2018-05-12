@@ -1,18 +1,22 @@
 // import HomeScreen from '../containers/HomeScreen';
 import LoginScreen from '../containers/LoginScreen';
-import MainScreen from '../containers/MainScreen';
+import TrackingScreen from '../containers/TrackingScreen';
 import ProfileScreen from '../containers/ProfileScreen';
+import HomeScreen from '../containers/HomeScreen';
 
 import {
-    // HOME,
+    HOME,
     LOGIN,
-    MAIN,
+    TRACKING,
     PROFILE,
+    NEXTPAGE,
 } from '../constants/screens';
+import NextPageScreen from '../containers/NextPageScreen';
 
 export default new Map([
-    // [HOME, HomeScreen],
-    [MAIN, MainScreen],
+    [HOME, HomeScreen],
+    [TRACKING, TrackingScreen],
     [LOGIN, LoginScreen],
     [PROFILE, ProfileScreen],
+    [NEXTPAGE, NextPageScreen],
 ]);

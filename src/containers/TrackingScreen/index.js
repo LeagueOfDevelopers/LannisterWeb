@@ -13,26 +13,26 @@ const styles = StyleSheet.create({
     },
 });
 
-const MainScreen = ({lal}) => (
+const TrackingScreen = ({goToLogin}) => (
     <View style={styles.container}>
         <Button
-            onPress={lal}
-            title="Пойти нахуй"
+            onPress={goToLogin}
+            title="Логин"
         />
     </View>
 );
 
-MainScreen.propTypes = {
-    lal: PropTypes.func.isRequired, // eslint-disable-line
+TrackingScreen.propTypes = {
+    goToLogin: PropTypes.func.isRequired, // eslint-disable-line
 };
 
-MainScreen.navigationOptions = {
-    title: 'Home Screen',
+TrackingScreen.navigationOptions = {
+    title: 'Tracking Screen',
 };
 
 const mapDispatchToProps = dispatch => ({
-    lal: () =>
-        dispatch(NavigationActions.navigate({routeName: 'Login'})),
+    goToLogin: () =>
+        dispatch(NavigationActions.navigate({routeName: 'Next'})),
 });
 
-export default connect(null, mapDispatchToProps)(MainScreen);
+export default connect(null, mapDispatchToProps)(TrackingScreen);

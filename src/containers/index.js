@@ -3,7 +3,6 @@ import React, {PureComponent} from 'react';
 import {Provider} from 'react-redux';
 
 import {createStore} from '../lib/store';
-// import HomeScreen from './HomeScreen';
 
 import AppWithNavigationState from '../components/AppNavigator';
 

@@ -3,7 +3,7 @@
 import React, {PureComponent} from 'react';
 import {View} from 'react-native';
 
-import Home from '../../components/Home';
+import Home from '../../components/home';
 import styles from './styles';
 
 const titles = ['jambul', 'ermagambet'];
@@ -20,5 +20,8 @@ class HomeScreen extends PureComponent {
     }
 }
 
-export default HomeScreen;
+HomeScreen.navigationOptions = {
+    title: 'Home Screen',
+};
 
+export default HomeScreen;

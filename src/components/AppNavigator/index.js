@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
+import {YellowBox} from 'react-native';
 
 import screensMap from '../../lib/screens';
 import {addListener} from '../../lib/redux';
-import {MAIN, LOGIN, PROFILE} from '../../constants/screens';
+import {HOME, TRACKING, LOGIN, PROFILE} from '../../constants/screens';
 
-const tabBarScreens = [MAIN, LOGIN, PROFILE];
+const tabBarScreens = [HOME, TRACKING, LOGIN, PROFILE];
+
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
 const getRouteConfigForTabBarStacks = (tabScreen) => {
     const routeConfigs = {};
