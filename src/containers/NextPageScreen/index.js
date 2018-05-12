@@ -26,7 +26,7 @@ const NextPageScreen = ({navigation}) => (
 );
 
 NextPageScreen.propTypes = {
-    navigation: PropTypes.object.isRequired, // eslint-disable-line
+    navigation: PropTypes.shape.isRequired,
 };
 
 NextPageScreen.navigationOptions = {

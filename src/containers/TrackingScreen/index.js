@@ -23,7 +23,7 @@ const TrackingScreen = ({goToLogin}) => (
 );
 
 TrackingScreen.propTypes = {
-    goToLogin: PropTypes.func.isRequired, // eslint-disable-line
+    goToLogin: PropTypes.shape.isRequired,
 };
 
 TrackingScreen.navigationOptions = {

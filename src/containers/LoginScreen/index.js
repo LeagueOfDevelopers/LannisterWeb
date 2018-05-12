@@ -32,7 +32,7 @@ const LoginScreen = ({navigation}) => (
 );
 
 LoginScreen.propTypes = {
-    navigation: PropTypes.object.isRequired, // eslint-disable-line
+    navigation: PropTypes.shape.isRequired,
 };
 
 LoginScreen.navigationOptions = {
