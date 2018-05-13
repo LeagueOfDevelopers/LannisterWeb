@@ -1,8 +1,7 @@
-// import HomeScreen from '../containers/HomeScreen';
+import HomeScreen from '../containers/HomeScreen';
 import LoginScreen from '../containers/LoginScreen';
 import TrackingScreen from '../containers/TrackingScreen';
 import ProfileScreen from '../containers/ProfileScreen';
-import HomeScreen from '../containers/HomeScreen';
 
 import {
     HOME,

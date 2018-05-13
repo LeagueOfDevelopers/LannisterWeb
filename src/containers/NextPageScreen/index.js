@@ -1,36 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Button, StyleSheet, View} from 'react-native';
+import {connect} from 'react-redux';
+import {Button, View} from 'react-native';
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-});
+import {navigate} from '../../actions/navigation';
+import {LOGIN} from '../../constants/screens';
+import styles from './styles';
 
-const NextPageScreen = ({navigation}) => (
+const NextPageScreen = ({dispatch}) => (
     <View style={styles.container}>
         <Button
-            onPress={() => navigation.dispatch({type: 'Login'})}
-            title="Log out"
+            onPress={() => dispatch(navigate({route: LOGIN}))}
+            title="LOGIN"
         />
     </View>
 );
 
 NextPageScreen.propTypes = {
-    navigation: PropTypes.shape.isRequired,
+    dispatch: PropTypes.func.isRequired,
 };
 
 NextPageScreen.navigationOptions = {
-    title: 'Log Out',
+    title: 'NEXT PAGE',
 };
 
-export default NextPageScreen;
+export default connect()(NextPageScreen);

@@ -1,22 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {connect} from 'react-redux';
+import {Button, Text, View} from 'react-native';
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-});
+import {navigate} from '../../actions/navigation';
+import {TRACKING} from '../../constants/screens';
+import styles from './styles';
 
-const LoginScreen = ({navigation}) => (
+const LoginScreen = ({dispatch}) => (
     <View style={styles.container}>
         <Text style={styles.welcome}>
       Screen A
@@ -25,18 +16,18 @@ const LoginScreen = ({navigation}) => (
       This is great
         </Text>
         <Button
-            onPress={() => navigation.dispatch({type: 'Login'})}
-            title="Log out"
+            onPress={() => dispatch(navigate({route: TRACKING}))}
+            title="TRACKING"
         />
     </View>
 );
 
 LoginScreen.propTypes = {
-    navigation: PropTypes.shape.isRequired,
+    dispatch: PropTypes.func.isRequired,
 };
 
 LoginScreen.navigationOptions = {
-    title: 'Log Out',
+    title: 'Loging Screen',
 };
 
-export default LoginScreen;
+export default connect()(LoginScreen);

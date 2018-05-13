@@ -1,10 +1,8 @@
-// @flow
 import React, {PureComponent} from 'react';
 import {Provider} from 'react-redux';
 
 import {createStore} from '../lib/store';
-
-import AppWithNavigationState from '../components/AppNavigator';
+import AppWithNavigationState from './AppNavigator';
 
 const store = createStore();
 

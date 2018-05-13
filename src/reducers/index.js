@@ -1,13 +1,9 @@
 import {combineReducers} from 'redux';
 
-import {
-    createNavigationReducer,
-} from 'react-navigation-redux-helpers';
+import nav from './navigation';
 
-import {AppNavigator} from '../components/AppNavigator';
-
-const AppReducer = combineReducers({
-    nav: createNavigationReducer(AppNavigator),
+const rootReducer = combineReducers({
+    nav,
 });
 
-export default AppReducer;
+export default rootReducer;

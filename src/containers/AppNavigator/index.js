@@ -6,8 +6,14 @@ import {YellowBox} from 'react-native';
 
 import screensMap from '../../lib/screens';
 import {addListener} from '../../lib/redux';
-import {HOME, TRACKING, LOGIN, PROFILE} from '../../constants/screens';
+import {
+    HOME,
+    TRACKING,
+    LOGIN,
+    PROFILE,
+} from '../../constants/screens';
 
+// TabBar screens
 const tabBarScreens = [HOME, TRACKING, LOGIN, PROFILE];
 
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
@@ -21,13 +27,12 @@ const getRouteConfigForTabBarStacks = (tabScreen) => {
     return routeConfigs;
 };
 
+// Route config for create TabNavigator
 const routeConfigForTabBar = {};
 tabBarScreens.forEach((screen) => {
     routeConfigForTabBar[screen.key] = createStackNavigator(
         getRouteConfigForTabBarStacks(screen),
-        {
-            initialRouteName: screen.key,
-        }
+        {initialRouteName: screen.key}
     );
 });
 
