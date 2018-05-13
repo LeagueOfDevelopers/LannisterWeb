@@ -23,7 +23,12 @@ const getRouteConfigForTabBarStacks = (tabScreen) => {
 
 const routeConfigForTabBar = {};
 tabBarScreens.forEach((screen) => {
-    routeConfigForTabBar[screen.key] = createStackNavigator(getRouteConfigForTabBarStacks(screen));
+    routeConfigForTabBar[screen.key] = createStackNavigator(
+        getRouteConfigForTabBarStacks(screen),
+        {
+            initialRouteName: screen.key,
+        }
+    );
 });
 
 export const AppNavigator = createBottomTabNavigator(routeConfigForTabBar);
